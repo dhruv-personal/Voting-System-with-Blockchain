@@ -1,4 +1,3 @@
-<img width="1920" height="1080" alt="4 5 1 HomePage" src="https://github.com/user-attachments/assets/bf0236b5-4267-4acc-99b7-01bbb295ded9" /># Blockchain-Based-Voting-System
 # Block Vote — Decentralized Voting System
 
 A secure, transparent voting web application that integrates a React frontend, Node/Express backend, and Ethereum smart contracts. This README explains how to set up, run, test, and deploy the project.
@@ -52,22 +51,31 @@ Quick setup (local)
      cd client && npm install
      cd ../server && npm install
 
-3. Environment variables
-   - Create a `.env` in `server/` (see below). Example:
-     PORT=5000
-     NODE_ENV=development
-     EMAIL_USER=your-gmail@gmail.com
-     EMAIL_PASS=your-app-specific-password
-     JWT_SECRET=your-secret-key-min-32-chars
-     ETHEREUM_NODE_URL=http://127.0.0.1:7545
-     CONTRACT_ADDRESS=<deployed_contract_address>
-     ADMIN_ETHEREUM_ADDRESS=<ganache_admin_address>
-     CHAIN_ID=1337
-   - Frontend environment (for local dev you can use `client/.env`):
-     REACT_APP_API_URL=http://localhost:5000
-     REACT_APP_NETWORK_ID=1337
-     REACT_APP_NETWORK_NAME=Local Ganache
-     REACT_APP_RPC_URL=http://127.0.0.1:7545
+3. Env variables
+### Server `.env`
+
+| Variable                 | Example / Value                | Description                                          |
+| ------------------------ | ------------------------------ | ---------------------------------------------------- |
+| `PORT`                   | `5000`                         | Port on which the server runs                        |
+| `NODE_ENV`               | `development`                  | Environment type (`development`, `production`, etc.) |
+| `EMAIL_USER`             | `your-gmail@gmail.com`         | Email account used for sending mails                 |
+| `EMAIL_PASS`             | `your-app-specific-password`   | App-specific password for the email account          |
+| `JWT_SECRET`             | `your-secret-key-min-32-chars` | Secret key for JWT authentication                    |
+| `ETHEREUM_NODE_URL`      | `http://127.0.0.1:7545`        | Ethereum node RPC URL (Ganache, Infura, etc.)        |
+| `CONTRACT_ADDRESS`       | `<deployed_contract_address>`  | Smart contract deployed address                      |
+| `ADMIN_ETHEREUM_ADDRESS` | `<ganache_admin_address>`      | Admin Ethereum address from Ganache                  |
+| `CHAIN_ID`               | `1337`                         | Chain ID of the local blockchain network             |
+
+---
+
+### Client `.env`
+
+| Variable                 | Example / Value         | Description                        |
+| ------------------------ | ----------------------- | ---------------------------------- |
+| `REACT_APP_API_URL`      | `http://localhost:5000` | Backend API URL                    |
+| `REACT_APP_NETWORK_ID`   | `1337`                  | Blockchain network ID              |
+| `REACT_APP_NETWORK_NAME` | `Local Ganache`         | Human-readable network name        |
+| `REACT_APP_RPC_URL`      | `http://127.0.0.1:7545` | RPC endpoint URL for Ethereum node |
 
    Files referenced in this repo:
    - server main: [server/index.js](server/index.js)
